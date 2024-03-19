@@ -1,5 +1,7 @@
 const AddPropertyButton = () => {
-    <p>button</p>
+    return (
+        <p>button</p>
+    )
 }
 
 
