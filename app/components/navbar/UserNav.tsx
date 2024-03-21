@@ -3,8 +3,11 @@
 import { useState } from "react";
 import MenuLink from "./MenuLink";
 
-const UserNav = () => {
+import useLoginModal from "@/app/hooks/useLoginModal";
 
+const UserNav = () => {
+    
+    const loginModal = useLoginModal();
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -28,7 +31,12 @@ const UserNav = () => {
                     
                     <MenuLink 
                         label='Log in'
-                        onClick={() => console.log('Clicked!')}
+                        onClick={() => {
+                            console.log('Clicked!')
+                            
+                            setIsOpen(false)
+                            loginModal.open()
+                        }}
                     />
 
                     <MenuLink 
